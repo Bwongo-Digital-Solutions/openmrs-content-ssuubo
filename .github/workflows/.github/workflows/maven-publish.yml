@@ -34,8 +34,10 @@
 name: Publish Ssuubo Content Package
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
 
 jobs:
   publish:
@@ -49,7 +51,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 11
-          server-id: github
+          server-id: ssuubo
           settings-path: ${{ github.workspace }}
 
       - name: Publish to GitHub Packages
