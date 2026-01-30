@@ -16,5 +16,13 @@
                 ]
             }
         }
+    },
+    "@openmrs/esm-billing-app": {
+        "defaultCurrency": "UGX",
+        "country": "UGX",
+        "logo": {
+            "src": "${openmrsSpaBase}/logo.png",
+            "alt": "UG"
+        }
     }
 }

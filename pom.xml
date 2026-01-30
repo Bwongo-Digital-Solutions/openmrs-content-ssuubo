@@ -1,13 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openmrs.content</groupId>
-	<artifactId>referenceapplication-demo</artifactId>
-	<version>1.7.0-SNAPSHOT</version>
-	<name />
+	<artifactId>ssuubo</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>Ssuubo Content Package</name>
+    <description>Content Package containing customized metadata for the Ssuubo instance</description>
 	<packaging>pom</packaging>
 	<developers>
 		<developer>
-			<name>OpenMRS</name>
+			<name>OpenMRS,EMR4All, Bwongo</name>
 			<organization>OpenMRS</organization>
 			<organizationUrl>http://openmrs.org</organizationUrl>
 		</developer>
@@ -162,10 +163,15 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
-		<repository>
-			<id>openmrs-repo-modules</id>
+		<!-- <repository>
+			<id>cliniemr</id>
 			<name>OpenMRS Nexus Modules</name>
 			<url>https://mavenrepo.openmrs.org/releases</url>
+		</repository> -->
+		<repository>
+			<id>ssuubo</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/openmrs/openmrs-content-ssuubo</url>
 		</repository>
 		<snapshotRepository>
 			<id>openmrs-repo-snapshots</id>
