@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openmrs.content</groupId>
 	<artifactId>ssuubo</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>Ssuubo Content Package</name>
     <description>Content Package containing customized metadata for the Ssuubo instance</description>
 	<packaging>pom</packaging>
@@ -174,9 +174,9 @@
 			<url>https://maven.pkg.github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo</url>
 		</repository>
 		<snapshotRepository>
-			<id>openmrs-repo-snapshots</id>
-			<name>OpenMRS Nexus Snapshots</name>
-			<url>https://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
+			<id>Ssuubo</id>
+			<name>Ssuubo Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
