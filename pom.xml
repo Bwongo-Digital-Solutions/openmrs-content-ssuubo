@@ -170,7 +170,7 @@
 		</repository> -->
 		<repository>
 			<id>ssuubo</id>
-			<name>GitHub Packages</name>
+			<name>Ssuubo Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/openmrs/openmrs-content-ssuubo</url>
 		</repository>
 		<snapshotRepository>
