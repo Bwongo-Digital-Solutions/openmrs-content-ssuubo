@@ -171,7 +171,7 @@
 		<repository>
 			<id>ssuubo</id>
 			<name>Ssuubo Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/openmrs/openmrs-content-ssuubo</url>
+			<url>https://maven.pkg.github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo</url>
 		</repository>
 		<snapshotRepository>
 			<id>openmrs-repo-snapshots</id>
