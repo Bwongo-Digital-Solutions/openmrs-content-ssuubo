@@ -22,7 +22,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-          server-id: clinicemr  # Must match repository ID in pom.xml
+          server-id: github  # GitHub Packages uses 'github' as server-id
           settings-path: ${{ github.workspace }}
 
       - name: Publish Package
