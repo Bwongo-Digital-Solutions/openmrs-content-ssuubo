@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openmrs.content</groupId>
 	<artifactId>ssuubo</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>Ssuubo Content Package</name>
     <description>Content Package containing customized metadata for the Ssuubo instance</description>
 	<packaging>pom</packaging>

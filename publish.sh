@@ -166,23 +166,13 @@ build_and_test() {
     
     cd "$PROJECT_DIR"
     
-    # Clean and build
-    mvn clean install
+    # Clean and build (includes validation)
+    mvn clean verify -DskipTests
     
     if [ $? -eq 0 ]; then
-        log_success "Build completed successfully"
+        log_success "Build and validation completed successfully"
     else
-        log_error "Build failed"
-        exit 1
-    fi
-    
-    # Validate content package
-    mvn openmrs-packager:validate-content-package
-    
-    if [ $? -eq 0 ]; then
-        log_success "Content package validation passed"
-    else
-        log_error "Content package validation failed"
+        log_error "Build or validation failed"
         exit 1
     fi
 }

@@ -1,0 +1,96 @@
+name: Generate Content Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Package version (leave empty for current version)'
+        required: false
+        type: string
+permissions:
+  contents: read
+  package: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 11
+          
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+          
+      - name: Update version if provided
+        if: github.event.inputs.version
+        run: |
+          mvn versions:set -DnewVersion=${{ github.event.inputs.version }}
+          mvn versions:commit
+          
+      - name: Validate content package
+        run: |
+          mvn verify -DskipTests
+          
+      - name: Build package
+        run: |
+          mvn clean package -DskipTests
+          
+      - name: List generated artifacts
+        run: |
+          echo "Generated artifacts:"
+          find target -name "*.zip" -o -name "*.jar" -exec ls -lh {} \;
+          
+      - name: Upload package artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ssuubo-content-package
+          path: |
+            target/*.zip
+            target/*.jar
+          retention-days: 30
+          
+      - name: Generate package info
+        run: |
+          echo "## Package Information" > package-info.md
+          echo "- **Artifact ID**: $(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)" >> package-info.md
+          echo "- **Group ID**: $(mvn help:evaluate -Dexpression=project.groupId -q -DforceStdout)" >> package-info.md
+          echo "- **Version**: $(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> package-info.md
+          echo "- **Build Time**: $(date -u)" >> package-info.md
+          echo "- **Commit**: ${{ github.sha }}" >> package-info.md
+          echo "- **Branch**: ${{ github.ref_name }}" >> package-info.md
+          echo "" >> package-info.md
+          echo "### Files:" >> package-info.md
+          find target -name "*.zip" -o -name "*.jar" -exec echo "- {}" \; >> package-info.md
+          
+      - name: Upload package info
+        uses: actions/upload-artifact@v3
+        with:
+          name: package-info
+          path: package-info.md
+          retention-days: 30
+          
+      - name: Test package integrity
+        run: |
+          for zip in target/*.zip; do
+            if [ -f "$zip" ]; then
+              echo "Testing $zip..."
+              unzip -t "$zip"
+            fi
+          done
