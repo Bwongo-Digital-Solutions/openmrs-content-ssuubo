@@ -1,0 +1,29 @@
+name: Publish to GitHub Packages
+
+on:
+  release:
+    types: [created] # Triggers when you create a new Release
+  workflow_dispatch: # Allows you to run this manually for testing
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write # Crucial for uploading the .zip/jar
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17 # OpenMRS 3.x standard
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          server-id: github-packages # This creates a virtual settings.xml for the runner
+
+      - name: Publish Package
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
