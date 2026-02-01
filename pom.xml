@@ -169,12 +169,12 @@
 			<url>https://mavenrepo.openmrs.org/releases</url>
 		</repository> -->
 		<repository>
-			<id>cliniemr</id>
+			<id>clinciemr</id>
 			<name>Ssuubo Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo</url>
 		</repository>
 		<snapshotRepository>
-			<id>cliniemr</id>
+			<id>clinciemr</id>
 			<name>Ssuubo Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo</url>
 		</snapshotRepository>
