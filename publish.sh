@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Automated Publishing Script for OpenMRS Content Package
+# Automated Publishing Script for OpenMRS Content Package to Maven Central
 # Usage: ./publish.sh [snapshot|release] [commit-message]
 
 set -e  # Exit on any error
@@ -71,12 +71,19 @@ validate_maven_settings() {
     # Check if settings.xml exists
     if [ ! -f "$HOME/.m2/settings.xml" ]; then
         log_warning "Maven settings.xml not found at ~/.m2/settings.xml"
-        log_warning "You may need to configure OpenMRS repository credentials"
+        log_warning "You must configure OSSRH credentials and GPG key for Maven Central publishing"
+        log_warning "See: https://central.sonatype.org/publish/publish-maven/"
     fi
     
     # Test Maven connection
     if ! mvn help:effective-settings -q > /dev/null 2>&1; then
         log_error "Maven settings validation failed"
+        exit 1
+    fi
+    
+    # Check if GPG is available for signing
+    if ! command -v gpg &> /dev/null; then
+        log_error "GPG is not installed or not in PATH (required for Maven Central signing)"
         exit 1
     fi
     
@@ -178,16 +185,18 @@ build_and_test() {
 }
 
 deploy_to_maven() {
-    log_info "Deploying to Maven repository..."
+    log_info "Deploying to Maven Central..."
     
     cd "$PROJECT_DIR"
     
-    mvn clean deploy
+    # For Maven Central, we use deploy with the release profile and GPG signing
+    mvn clean deploy -P release --show-version
     
     if [ $? -eq 0 ]; then
-        log_success "Deployment to Maven repository completed"
+        log_success "Deployment to Maven Central completed"
+        log_info "Note: For releases, artifacts will be staged and need to be manually released in Sonatype Nexus"
     else
-        log_error "Maven deployment failed"
+        log_error "Maven Central deployment failed"
         exit 1
     fi
 }

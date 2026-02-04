@@ -1,22 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.openmrs.content</groupId>
+	<groupId>io.github.tendomart</groupId>
 	<artifactId>ssuubo</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<name>Ssuubo Content Package</name>
     <description>Content Package containing customized metadata for the Ssuubo instance</description>
 	<packaging>pom</packaging>
+	<url>https://github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo</url>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 	<developers>
 		<developer>
 			<name>OpenMRS,EMR4All, Bwongo</name>
-			<organization>OpenMRS</organization>
-			<organizationUrl>http://openmrs.org</organizationUrl>
+			<organization>Bwongo Digital Solutions</organization>
+			<organizationUrl>https://bwongo.site</organizationUrl>
 		</developer>
 	</developers>
 	<scm>
-		<connection>scm:git:git@github.com:openmrs/openmrs-content-referenceapplication-demo.git</connection>
-		<developerConnection>scm:git:git@github.com:openmrs/openmrs-content-referenceapplication-demo.git</developerConnection>
-		<url>https://github.com/openmrs/openmrs-content-referenceapplication-demo.git</url>
+		<connection>scm:git:git://github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo.git</connection>
+		<developerConnection>scm:git:ssh://github.com:Bwongo-Digital-Solutions/openmrs-content-ssuubo.git</developerConnection>
+		<url>https://github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo/tree/main</url>
 	  <tag>HEAD</tag>
   </scm>
 	<properties>
@@ -25,6 +33,15 @@
 	</properties>
 	<build>
 		<plugins>
+		<plugin>
+      <groupId>org.sonatype.central</groupId>
+      <artifactId>central-publishing-maven-plugin</artifactId>
+      <version>0.7.0</version> <extensions>true</extensions>
+      <configuration>
+        <publishingServerId>central</publishingServerId>
+        <autoPublish>true</autoPublish>
+      </configuration>
+    </plugin>
 			<plugin>
 				<groupId>org.openmrs.maven.plugins</groupId>
 				<artifactId>openmrs-packager-maven-plugin</artifactId>
@@ -88,6 +105,8 @@
 					<preparationGoals>clean install</preparationGoals>
 					<goals>deploy</goals>
 					<tagNameFormat>@{project.version}</tagNameFormat>
+					<pushChanges>false</pushChanges>
+					<localCheckout>true</localCheckout>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -115,6 +134,57 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.6.3</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>3.2.4</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.7.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -163,20 +233,13 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
-		<!-- <repository>
-			<id>cliniemr</id>
-			<name>OpenMRS Nexus Modules</name>
-			<url>https://mavenrepo.openmrs.org/releases</url>
-		</repository> -->
-		<repository>
-			<id>github</id>
-			<name>Ssuubo Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo</url>
-		</repository>
 		<snapshotRepository>
-			<id>github</id>
-			<name>Ssuubo Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo</url>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
 	</distributionManagement>
 </project>
