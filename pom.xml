@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.tendomart</groupId>
 	<artifactId>ssuubo</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4-SNAPSHOT</version>
 	<name>Ssuubo Content Package</name>
     <description>Content Package containing customized metadata for the Ssuubo instance</description>
 	<packaging>pom</packaging>
