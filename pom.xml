@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.tendomart</groupId>
 	<artifactId>ssuubo</artifactId>
-	<version>1.0.7</version>
+	<version>1.0.8-SNAPSHOT</version>
 	<name>Ssuubo Content Package</name>
     <description>Content Package containing customized metadata for the Ssuubo instance</description>
 	<packaging>pom</packaging>
@@ -25,7 +25,7 @@
 		<connection>scm:git:git://github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo.git</connection>
 		<developerConnection>scm:git:ssh://github.com:Bwongo-Digital-Solutions/openmrs-content-ssuubo.git</developerConnection>
 		<url>https://github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo/tree/main</url>
-	  <tag>1.0.7</tag>
+	  <tag>HEAD</tag>
   </scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
