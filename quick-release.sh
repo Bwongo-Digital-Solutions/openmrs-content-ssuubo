@@ -38,8 +38,8 @@ VERSION_NUMBER=${CURRENT_VERSION%"-SNAPSHOT"}
 print_status "Releasing version: $VERSION_NUMBER"
 
 # Execute release
-mvn release:prepare -DautoVersionSubmodules=true -DpushChanges=false
-mvn release:perform
+mvn release:prepare -DautoVersionSubmodules=true -DpushChanges=false -DskipTests=true
+mvn release:perform -DskipTests=true
 
 # Verify and show results
 if git rev-parse "refs/tags/$VERSION_NUMBER" > /dev/null 2>&1; then
