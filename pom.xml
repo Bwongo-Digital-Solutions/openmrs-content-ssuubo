@@ -5,7 +5,7 @@
 	<version>1.0.6-SNAPSHOT</version>
 	<name>Ssuubo Content Package</name>
     <description>Content Package containing customized metadata for the Ssuubo instance</description>
-	<packaging>zip</packaging>
+	<packaging>pom</packaging>
 	<url>https://github.com/Bwongo-Digital-Solutions/openmrs-content-ssuubo</url>
 	<licenses>
 		<license>
