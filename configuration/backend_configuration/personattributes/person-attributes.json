@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "15151515-aaaa-bbbb-cccc-151515151515",
+    "name": "Contact Number",
+    "format": "java.lang.String",
+    "searchable": true,
+    "allowMultiple": true
+  },
+  {
+    "uuid": "16161616-aaaa-bbbb-cccc-161616161616",
+    "name": "Comments",
+    "format": "org.openmrs.customdatatype.datatype.LongFreeTextDatatype"
+  }
+]

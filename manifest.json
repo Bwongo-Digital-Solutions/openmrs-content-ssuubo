@@ -1,0 +1,11 @@
+{
+  "name": "SSUUBO Demo Data Package",
+  "uuid": "b71d3f38-4d7b-4d7b-9d29-ssuubo-demo",
+  "version": "1.0.0",
+  "description": "Demo patients and sample SCD clinical data for SSUUBO",
+  "openmrsVersion": "3.x",
+  "packages": [
+    "metadata",
+    "frontend"
+  ]
+}

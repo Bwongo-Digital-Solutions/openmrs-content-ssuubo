@@ -1,0 +1,34 @@
+[
+  {
+    "uuid": "44444444-aaaa-bbbb-cccc-444444444444",
+    "datatype": "Boolean",
+    "conceptClass": "Question",
+    "names": [{ "name": "Hydroxyurea treatment", "locale": "en", "preferred": true }]
+  },
+  {
+    "uuid": "55555555-aaaa-bbbb-cccc-555555555555",
+    "datatype": "Date",
+    "conceptClass": "Question",
+    "names": [{ "name": "Hydroxyurea start date", "locale": "en", "preferred": true }]
+  },
+  {
+    "uuid": "66666666-aaaa-bbbb-cccc-666666666666",
+    "datatype": "Date",
+    "conceptClass": "Question",
+    "names": [{ "name": "Hydroxyurea stop date", "locale": "en", "preferred": true }]
+  },
+
+  {
+    "uuid": "77777777-aaaa-bbbb-cccc-777777777777",
+    "datatype": "Boolean",
+    "conceptClass": "Question",
+    "names": [{ "name": "Chronic transfusion programme", "locale": "en", "preferred": true }]
+  },
+
+  {
+    "uuid": "88888888-aaaa-bbbb-cccc-888888888888",
+    "datatype": "Boolean",
+    "conceptClass": "Question",
+    "names": [{ "name": "Physiotherapy", "locale": "en", "preferred": true }]
+  }
+]

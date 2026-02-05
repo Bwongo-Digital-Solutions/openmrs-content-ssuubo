@@ -1,0 +1,20 @@
+[
+  {
+    "uuid": "11111111-aaaa-bbbb-cccc-111111111111",
+    "datatype": "Date",
+    "conceptClass": "Question",
+    "names": [{ "name": "Date of SCD diagnosis", "locale": "en", "preferred": true }]
+  },
+  {
+    "uuid": "22222222-aaaa-bbbb-cccc-222222222222",
+    "datatype": "Date",
+    "conceptClass": "Question",
+    "names": [{ "name": "Date of SSUUBO care enrollment", "locale": "en", "preferred": true }]
+  },
+  {
+    "uuid": "33333333-aaaa-bbbb-cccc-333333333333",
+    "datatype": "Date",
+    "conceptClass": "Question",
+    "names": [{ "name": "PCV vaccination date", "locale": "en", "preferred": true }]
+  }
+]

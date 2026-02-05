@@ -1,0 +1,40 @@
+[
+  {
+    "uuid": "dddddddd-aaaa-bbbb-cccc-dddddddddddd",
+    "datatype": "N/A",
+    "conceptClass": "ConvSet",
+    "names": [{ "name": "Sibling information", "locale": "en", "preferred": true }]
+  },
+  {
+    "uuid": "eeeeeeee-aaaa-bbbb-cccc-eeeeeeeeeeee",
+    "datatype": "Text",
+    "conceptClass": "Question",
+    "names": [{ "name": "Sibling name", "locale": "en", "preferred": true }]
+  },
+  {
+    "uuid": "ffffffff-aaaa-bbbb-cccc-ffffffffffff",
+    "datatype": "Numeric",
+    "conceptClass": "Question",
+    "names": [{ "name": "Sibling year of birth", "locale": "en", "preferred": true }]
+  },
+  {
+    "uuid": "12121212-aaaa-bbbb-cccc-121212121212",
+    "datatype": "Coded",
+    "conceptClass": "Question",
+    "names": [{ "name": "Sibling tested for SCD", "locale": "en", "preferred": true }],
+    "answers": ["Yes", "No"]
+  },
+  {
+    "uuid": "13131313-aaaa-bbbb-cccc-131313131313",
+    "datatype": "Coded",
+    "conceptClass": "Question",
+    "names": [{ "name": "Sibling test result", "locale": "en", "preferred": true }],
+    "answers": ["NA", "Negative", "Positive"]
+  },
+  {
+    "uuid": "14141414-aaaa-bbbb-cccc-141414141414",
+    "datatype": "Text",
+    "conceptClass": "Question",
+    "names": [{ "name": "Sibling SSUUBO number", "locale": "en", "preferred": true }]
+  }
+]
