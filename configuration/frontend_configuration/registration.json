@@ -1,0 +1,268 @@
+{
+  "pages": [
+    {
+      "id": "patient-registration",
+      "label": "Patient Registration",
+      "sections": [
+        {
+          "id": "identifiers",
+          "label": "Identifiers",
+          "questions": [
+            {
+              "id": "primaryIdentifier",
+              "type": "patientIdentifier",
+              "label": "Patient Identifier",
+              "patientIdentifierTypeUuid": "REPLACE-WITH-PRIMARY-ID-UUID",
+              "required": true
+            }
+          ]
+        },
+
+        {
+          "id": "demographics",
+          "label": "Demographics",
+          "questions": [
+            { "id": "givenName", "type": "name", "required": true },
+            { "id": "familyName", "type": "name", "required": true },
+
+            {
+              "id": "gender",
+              "type": "gender",
+              "label": "Sex",
+              "required": true,
+              "allowedGenders": ["M", "F"]
+            },
+
+            {
+              "id": "birthdate",
+              "type": "date",
+              "required": true
+            },
+
+            {
+              "id": "estimatedAge",
+              "type": "estimatedAge"
+            },
+
+            {
+              "id": "dead",
+              "type": "deathStatus"
+            },
+
+            {
+              "id": "deathDate",
+              "type": "date",
+              "showIf": {
+                "questionId": "dead",
+                "equals": true
+              }
+            },
+
+            {
+              "id": "address",
+              "type": "address",
+              "label": "Address"
+            },
+
+            {
+              "id": "photo",
+              "type": "photo",
+              "label": "Patient Photograph"
+            }
+          ]
+        },
+
+        {
+          "id": "contacts",
+          "label": "Contacts & Notes",
+          "questions": [
+            {
+              "id": "contactNumbers",
+              "type": "personAttribute",
+              "label": "Contact Numbers",
+              "personAttributeTypeUuid": "REPLACE-WITH-CONTACT-NUMBERS-UUID",
+              "repeatable": true
+            },
+            {
+              "id": "comments",
+              "type": "personAttribute",
+              "label": "Comments",
+              "personAttributeTypeUuid": "REPLACE-WITH-COMMENTS-UUID"
+            }
+          ]
+        },
+
+        {
+          "id": "scd-program",
+          "label": "SCD Program Information",
+          "questions": [
+            {
+              "id": "scdDiagnosisDate",
+              "type": "obs",
+              "label": "Date of SCD Diagnosis",
+              "concept": "Date of SCD diagnosis"
+            },
+            {
+              "id": "ssuuboEnrollment",
+              "type": "obs",
+              "label": "Date of SSUUBO Care Enrollment",
+              "concept": "SSUUBO care enrollment date"
+            },
+            {
+              "id": "pcvDate",
+              "type": "obs",
+              "label": "PCV Vaccination Date",
+              "concept": "PCV vaccination date"
+            }
+          ]
+        },
+
+        {
+          "id": "treatments",
+          "label": "Treatments",
+          "questions": [
+            {
+              "id": "hydroxyurea",
+              "type": "obs",
+              "label": "Hydroxyurea Treatment",
+              "concept": "Hydroxyurea treatment",
+              "showConditionalQuestions": true,
+              "conditionalQuestions": [
+                {
+                  "id": "huStart",
+                  "type": "obs",
+                  "label": "Start Date",
+                  "concept": "Hydroxyurea start date"
+                },
+                {
+                  "id": "huStop",
+                  "type": "obs",
+                  "label": "Stop Date",
+                  "concept": "Hydroxyurea stop date"
+                }
+              ]
+            },
+
+            {
+              "id": "chronicTransfusion",
+              "type": "obs",
+              "label": "Chronic Transfusion Programme",
+              "concept": "Chronic transfusion programme",
+              "showConditionalQuestions": true,
+              "conditionalQuestions": [
+                {
+                  "id": "ctStart",
+                  "type": "obs",
+                  "label": "Start Date",
+                  "concept": "Chronic transfusion start date"
+                },
+                {
+                  "id": "ctStop",
+                  "type": "obs",
+                  "label": "Stop Date",
+                  "concept": "Chronic transfusion stop date"
+                }
+              ]
+            },
+
+            {
+              "id": "physiotherapy",
+              "type": "obs",
+              "label": "Physiotherapy",
+              "concept": "Physiotherapy",
+              "showConditionalQuestions": true,
+              "conditionalQuestions": [
+                {
+                  "id": "ptStart",
+                  "type": "obs",
+                  "label": "Start Date",
+                  "concept": "Physiotherapy start date"
+                },
+                {
+                  "id": "ptStop",
+                  "type": "obs",
+                  "label": "Stop Date",
+                  "concept": "Physiotherapy stop date"
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "id": "diagnoses",
+          "label": "Primary Diagnoses",
+          "type": "obsGroup",
+          "repeatable": true,
+          "questions": [
+            {
+              "id": "diagnosisType",
+              "type": "obs",
+              "label": "Diagnosis",
+              "concept": "SCD diagnosis type"
+            },
+            {
+              "id": "diagnosisDate",
+              "type": "obs",
+              "label": "Date Diagnosed",
+              "concept": "Diagnosis date"
+            },
+            {
+              "id": "otherDiagnosis",
+              "type": "obs",
+              "label": "Other Diagnosis Description",
+              "concept": "Other diagnosis description",
+              "showIf": {
+                "questionId": "diagnosisType",
+                "equals": "Other"
+              }
+            }
+          ]
+        },
+
+        {
+          "id": "siblings",
+          "label": "Siblings",
+          "type": "obsGroup",
+          "repeatable": true,
+          "questions": [
+            {
+              "id": "siblingName",
+              "type": "obs",
+              "label": "Sibling Name",
+              "concept": "Sibling name"
+            },
+            {
+              "id": "siblingYear",
+              "type": "obs",
+              "label": "Year of Birth",
+              "concept": "Sibling year of birth"
+            },
+            {
+              "id": "tested",
+              "type": "obs",
+              "label": "Tested for SCD",
+              "concept": "Sibling tested for SCD"
+            },
+            {
+              "id": "testResult",
+              "type": "obs",
+              "label": "Test Result",
+              "concept": "Sibling SCD test result",
+              "showIf": {
+                "questionId": "tested",
+                "equals": true
+              }
+            },
+            {
+              "id": "ssuuboNo",
+              "type": "obs",
+              "label": "SSUUBO Number",
+              "concept": "Sibling SSUUBO number"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
