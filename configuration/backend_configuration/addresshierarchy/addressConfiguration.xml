@@ -1,46 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <addressConfiguration>
   <wipe>true</wipe>
   <addressComponents>
     <addressComponent>
       <field>COUNTRY</field>
       <nameMapping>Location.country</nameMapping>
-      <sizeMapping>40</sizeMapping>
+      <sizeMapping>60</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>REGION</field>
       <nameMapping>Location.region</nameMapping>
-      <sizeMapping>40</sizeMapping>
+      <sizeMapping>60</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>DISTRICT</field>
       <nameMapping>Location.district</nameMapping>
-      <sizeMapping>40</sizeMapping>
+      <sizeMapping>60</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>COUNTY</field>
       <nameMapping>Location.countyDistrict</nameMapping>
-      <sizeMapping>40</sizeMapping>
+      <sizeMapping>60</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>SUB_COUNTY</field>
       <nameMapping>Location.cityVillage</nameMapping>
-      <sizeMapping>40</sizeMapping>
+      <sizeMapping>60</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>PARISH</field>
       <nameMapping>Location.address1</nameMapping>
-      <sizeMapping>40</sizeMapping>
+      <sizeMapping>60</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>VILLAGE</field>
       <nameMapping>Location.address2</nameMapping>
-      <sizeMapping>40</sizeMapping>
+      <sizeMapping>60</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
   </addressComponents>
