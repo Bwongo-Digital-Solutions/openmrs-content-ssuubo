@@ -8,34 +8,44 @@
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
-      <field>STATE_PROVINCE</field>
-      <nameMapping>Location.province</nameMapping>
+      <field>REGION</field>
+      <nameMapping>Location.region</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
-      <field>COUNTY_DISTRICT</field>
+      <field>DISTRICT</field>
       <nameMapping>Location.district</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
-      <field>ADDRESS_1</field>
-      <nameMapping>impl.commune</nameMapping>
+      <field>COUNTY</field>
+      <nameMapping>Location.countyDistrict</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
-      <field>CITY_VILLAGE</field>
-      <nameMapping>Location.village</nameMapping>
+      <field>SUB_COUNTY</field>
+      <nameMapping>Location.cityVillage</nameMapping>
+      <sizeMapping>40</sizeMapping>
+      <requiredInHierarchy>true</requiredInHierarchy>
+    </addressComponent>
+    <addressComponent>
+      <field>PARISH</field>
+      <nameMapping>Location.address1</nameMapping>
+      <sizeMapping>40</sizeMapping>
+      <requiredInHierarchy>true</requiredInHierarchy>
+    </addressComponent>
+    <addressComponent>
+      <field>VILLAGE</field>
+      <nameMapping>Location.address2</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
   </addressComponents>
   <lineByLineFormat>
-    <string>cityVillage, address1</string>
-    <string>countyDistrict, stateProvince</string>
-    <string>country</string>
+    <string>country,region,district,county,sub_county,parish,village</string>
   </lineByLineFormat>
   <addressHierarchyFile>
     <filename>addresshierarchy.csv</filename>
