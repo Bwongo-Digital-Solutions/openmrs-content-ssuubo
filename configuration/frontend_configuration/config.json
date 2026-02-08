@@ -24,5 +24,12 @@
             "src": "${openmrsSpaBase}/logo.png",
             "alt": "UG"
         }
+    },
+    "@openmrs/esm-registration-app": {
+        "registration": {
+            "config": {
+                "registrationConfig": "${openmrsSpaBase}/configuration/frontend_configuration/registration.json"
+            }
+        }
     }
 }
