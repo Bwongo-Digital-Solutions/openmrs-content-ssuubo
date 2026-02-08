@@ -1,0 +1,10 @@
+{
+  "@openmrs/esm-patient-registration-app": {
+    "sections": [
+      "demographics",
+      "contact",
+      "relationships",
+      "additionalDetails"
+    ]
+  }
+}
