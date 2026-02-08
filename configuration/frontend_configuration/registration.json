@@ -12,7 +12,7 @@
               "id": "primaryIdentifier",
               "type": "patientIdentifier",
               "label": "Patient Identifier",
-              "patientIdentifierTypeUuid": "REPLACE-WITH-PRIMARY-ID-UUID",
+              "patientIdentifierTypeUuid": "05a29f94-c0ed-11e2-94be-8c13b969e334",
               "required": true
             }
           ]
@@ -80,14 +80,14 @@
               "id": "contactNumbers",
               "type": "personAttribute",
               "label": "Contact Numbers",
-              "personAttributeTypeUuid": "REPLACE-WITH-CONTACT-NUMBERS-UUID",
+              "personAttributeTypeUuid": "15151515-aaaa-bbbb-cccc-151515151515",
               "repeatable": true
             },
             {
               "id": "comments",
               "type": "personAttribute",
               "label": "Comments",
-              "personAttributeTypeUuid": "REPLACE-WITH-COMMENTS-UUID"
+              "personAttributeTypeUuid": "16161616-aaaa-bbbb-cccc-161616161616"
             }
           ]
         },
@@ -100,19 +100,19 @@
               "id": "scdDiagnosisDate",
               "type": "obs",
               "label": "Date of SCD Diagnosis",
-              "concept": "Date of SCD diagnosis"
+              "conceptUuid": "11111111-aaaa-bbbb-cccc-111111111111"
             },
             {
               "id": "ssuuboEnrollment",
               "type": "obs",
               "label": "Date of SSUUBO Care Enrollment",
-              "concept": "SSUUBO care enrollment date"
+              "conceptUuid": "22222222-aaaa-bbbb-cccc-222222222222"
             },
             {
               "id": "pcvDate",
               "type": "obs",
               "label": "PCV Vaccination Date",
-              "concept": "PCV vaccination date"
+              "conceptUuid": "33333333-aaaa-bbbb-cccc-333333333333"
             }
           ]
         },
@@ -125,7 +125,7 @@
               "id": "hydroxyurea",
               "type": "obs",
               "label": "Hydroxyurea Treatment",
-              "concept": "Hydroxyurea treatment",
+              "conceptUuid": "44444444-aaaa-bbbb-cccc-444444444444",
               "showConditionalQuestions": true,
               "conditionalQuestions": [
                 {
@@ -147,7 +147,7 @@
               "id": "chronicTransfusion",
               "type": "obs",
               "label": "Chronic Transfusion Programme",
-              "concept": "Chronic transfusion programme",
+              "conceptUuid": "55555555-aaaa-bbbb-cccc-555555555555",
               "showConditionalQuestions": true,
               "conditionalQuestions": [
                 {
@@ -169,7 +169,7 @@
               "id": "physiotherapy",
               "type": "obs",
               "label": "Physiotherapy",
-              "concept": "Physiotherapy",
+              "conceptUuid": "66666666-aaaa-bbbb-cccc-666666666666",
               "showConditionalQuestions": true,
               "conditionalQuestions": [
                 {
@@ -199,23 +199,7 @@
               "id": "diagnosisType",
               "type": "obs",
               "label": "Diagnosis",
-              "concept": "SCD diagnosis type"
-            },
-            {
-              "id": "diagnosisDate",
-              "type": "obs",
-              "label": "Date Diagnosed",
-              "concept": "Diagnosis date"
-            },
-            {
-              "id": "otherDiagnosis",
-              "type": "obs",
-              "label": "Other Diagnosis Description",
-              "concept": "Other diagnosis description",
-              "showIf": {
-                "questionId": "diagnosisType",
-                "equals": "Other"
-              }
+              "conceptUuid": "77777777-aaaa-bbbb-cccc-777777777777"
             }
           ]
         },
@@ -242,13 +226,13 @@
               "id": "tested",
               "type": "obs",
               "label": "Tested for SCD",
-              "concept": "Sibling tested for SCD"
+              "conceptUuid": "88888888-aaaa-bbbb-cccc-888888888888"
             },
             {
               "id": "testResult",
               "type": "obs",
               "label": "Test Result",
-              "concept": "Sibling SCD test result",
+              "conceptUuid": "99999999-aaaa-bbbb-cccc-999999999999",
               "showIf": {
                 "questionId": "tested",
                 "equals": true
@@ -258,7 +242,7 @@
               "id": "ssuuboNo",
               "type": "obs",
               "label": "SSUUBO Number",
-              "concept": "Sibling SSUUBO number"
+              "conceptUuid": "10101010-aaaa-bbbb-cccc-101010101010"
             }
           ]
         }
