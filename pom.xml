@@ -45,7 +45,7 @@
 			<plugin>
 				<groupId>org.openmrs.maven.plugins</groupId>
 				<artifactId>openmrs-packager-maven-plugin</artifactId>
-				<version>1.9.0</version>
+				<version>1.0.10-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<id>validate-content-package</id>
