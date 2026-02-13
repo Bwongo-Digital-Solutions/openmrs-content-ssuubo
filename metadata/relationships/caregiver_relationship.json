@@ -1,0 +1,6 @@
+{
+  "uuid": "r1111111-2222-3333-4444-555555555555",
+  "aIsToB": "Caregiver",
+  "bIsToA": "Patient",
+  "description": "Defines caregiver or next of kin"
+}

@@ -1,0 +1,78 @@
+{
+  "uuid": "f1111111-aaaa-bbbb-cccc-111111111111",
+  "name": "SSUUBO SCD Intake Form",
+  "version": "1.0",
+  "description": "Initial intake form for Sickle Cell Disease patients",
+
+  "pages": [
+    {
+      "label": "Diagnosis Information",
+      "sections": [
+        {
+          "label": "SCD Diagnosis",
+          "questions": [
+            {
+              "type": "obs",
+              "label": "Date of SCD Diagnosis",
+              "concept": "a1111111-1111-1111-1111-111111111111",
+              "required": true
+            },
+            {
+              "type": "obs",
+              "label": "Genotype",
+              "concept": "a2222222-2222-2222-2222-222222222222",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "label": "Clinical History",
+      "sections": [
+        {
+          "label": "Crisis History",
+          "questions": [
+            {
+              "type": "obs",
+              "label": "History of Pain Crisis",
+              "concept": "a3333333-3333-3333-3333-333333333333"
+            },
+            {
+              "type": "obs",
+              "label": "Number of Crisis Episodes in Last Year",
+              "concept": "a4444444-4444-4444-4444-444444444444"
+            }
+          ]
+        },
+        {
+          "label": "Transfusion History",
+          "questions": [
+            {
+              "type": "obs",
+              "label": "History of Blood Transfusion",
+              "concept": "a5555555-5555-5555-5555-555555555555"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "label": "Treatment",
+      "sections": [
+        {
+          "label": "Medication",
+          "questions": [
+            {
+              "type": "obs",
+              "label": "Current SCD Medication",
+              "concept": "a6666666-6666-6666-6666-666666666666"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

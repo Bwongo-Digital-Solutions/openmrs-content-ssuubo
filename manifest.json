@@ -4,6 +4,12 @@
   "version": "1.0.0",
   "description": "Demo patients and sample SCD clinical data for SSUUBO",
   "openmrsVersion": "3.x",
+  "metadata": [
+    "metadata/concepts/scd_concepts.json",
+    "metadata/forms/scd_intake_form.json",
+    "metadata/programs/scd_program.json",
+    "metadata/relationships/caregiver_relationship.json"
+  ],
   "packages": [
     "metadata",
     "frontend"

@@ -1,0 +1,28 @@
+{
+  "uuid": "p1111111-2222-3333-4444-555555555555",
+  "name": "Sickle Cell Disease Program",
+  "description": "Longitudinal care program for SCD patients",
+
+  "states": [
+    {
+      "uuid": "s1",
+      "name": "Enrolled"
+    },
+    {
+      "uuid": "s2",
+      "name": "Active Care"
+    },
+    {
+      "uuid": "s3",
+      "name": "Complications"
+    },
+    {
+      "uuid": "s4",
+      "name": "Transferred Out"
+    },
+    {
+      "uuid": "s5",
+      "name": "Deceased"
+    }
+  ]
+}

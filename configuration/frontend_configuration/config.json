@@ -27,7 +27,7 @@
     },
     "@openmrs/esm-registration-app": {
         "registration": {
-            "config": "/openmrs/distribution/openmrs_config/frontend_configuration/esm-patient-registration-app.json"
+            "config": "/openmrs/distribution/openmrs_config/frontend_configuration/registration_v3.json"
         }
     }
 }

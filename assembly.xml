@@ -20,7 +20,7 @@
 			</includes>
 		</fileSet>
 		<fileSet>
-			<directory>${project.basedir}/frontend</directory>
+			<directory>${project.basedir}/metadata</directory>
 			<includes>
 				<include>**/*</include>
 			</includes>

@@ -1,0 +1,151 @@
+{
+  "id": "ssuubo-scd-intake-form",
+  "name": "SSUUBO SCD Intake Form",
+  "version": "1.0.0",
+  "description": "Initial intake form for Sickle Cell Disease patients",
+  "encounter": "admission",
+
+  "pages": [
+    {
+      "id": "diagnosis_page",
+      "label": {
+        "text": "Diagnosis Information"
+      },
+      "type": "page",
+
+      "sections": [
+        {
+          "id": "scd_diagnosis_section",
+          "label": {
+            "text": "SCD Diagnosis"
+          },
+          "type": "section",
+
+          "questions": [
+            {
+              "id": "scd_diagnosis_date",
+              "label": {
+                "text": "Date of SCD Diagnosis"
+              },
+              "type": "obs",
+              "required": true,
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "a1111111-1111-1111-1111-111111111111"
+              }
+            },
+            {
+              "id": "scd_genotype",
+              "label": {
+                "text": "Genotype"
+              },
+              "type": "obs",
+              "required": true,
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "a2222222-2222-2222-2222-222222222222"
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "history_page",
+      "label": {
+        "text": "Clinical History"
+      },
+      "type": "page",
+
+      "sections": [
+        {
+          "id": "crisis_history_section",
+          "label": {
+            "text": "Crisis History"
+          },
+          "type": "section",
+
+          "questions": [
+            {
+              "id": "pain_crisis_history",
+              "label": {
+                "text": "History of Pain Crisis"
+              },
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "a3333333-3333-3333-3333-333333333333"
+              }
+            },
+            {
+              "id": "crisis_frequency",
+              "label": {
+                "text": "Number of Crisis Episodes in Last Year"
+              },
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "a4444444-4444-4444-4444-444444444444"
+              }
+            }
+          ]
+        },
+
+        {
+          "id": "transfusion_section",
+          "label": {
+            "text": "Transfusion History"
+          },
+          "type": "section",
+
+          "questions": [
+            {
+              "id": "blood_transfusion_history",
+              "label": {
+                "text": "History of Blood Transfusion"
+              },
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "a5555555-5555-5555-5555-555555555555"
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "treatment_page",
+      "label": {
+        "text": "Treatment"
+      },
+      "type": "page",
+
+      "sections": [
+        {
+          "id": "medication_section",
+          "label": {
+            "text": "Medication"
+          },
+          "type": "section",
+
+          "questions": [
+            {
+              "id": "current_medication",
+              "label": {
+                "text": "Current SCD Medication"
+              },
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "a6666666-6666-6666-6666-666666666666"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
