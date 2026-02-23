@@ -1,7 +1,7 @@
 {
   "name": "SSUUBO Sickle Cell Disease Form",
   "description": "Comprehensive Sickle Cell Disease patient intake and management form",
-  "version": "1.1",
+  "version": "1.2",
   "published": true,
   "uuid": "3f2a1b4c-7d8e-4f9a-b2c3-d4e5f6a7b8c9",
   "retired": false,
@@ -21,7 +21,7 @@
               "id": "patientName",
               "questionOptions": {
                 "rendering": "text",
-                "concept": "162087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               }
             },
             {
@@ -31,7 +31,7 @@
               "id": "dateOfBirth",
               "questionOptions": {
                 "rendering": "date",
-                "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "validators": [
                 {
@@ -47,7 +47,7 @@
               "id": "isDeceased",
               "questionOptions": {
                 "rendering": "radio",
-                "concept": "159AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "answers": [
                   {
                     "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -67,7 +67,7 @@
               "id": "deathDate",
               "questionOptions": {
                 "rendering": "date",
-                "concept": "160715AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "validators": [
                 {
@@ -86,7 +86,7 @@
               "id": "reasonForDeath",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "160618AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "hide": {
                 "hideWhenExpression": "isDeceased !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -113,7 +113,7 @@
               "type": "obsGroup",
               "id": "contactNumbersGroup",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "repeating"
               },
               "questions": [
@@ -123,7 +123,7 @@
                   "id": "phoneNumber",
                   "questionOptions": {
                     "rendering": "text",
-                    "concept": "162087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "1420AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                   }
                 }
               ]
@@ -135,17 +135,7 @@
               "id": "comments",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-              }
-            },
-            {
-              "label": "Patient Photograph (attach file reference)",
-              "type": "obs",
-              "required": false,
-              "id": "patientPhoto",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "162087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "160618AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               }
             }
           ]
@@ -225,7 +215,7 @@
               "id": "onHydroxyurea",
               "questionOptions": {
                 "rendering": "radio",
-                "concept": "1871AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "answers": [
                   {
                     "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -264,7 +254,7 @@
               "id": "hydroxyureaStopDate",
               "questionOptions": {
                 "rendering": "date",
-                "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "validators": [
                 {
@@ -289,7 +279,7 @@
               "id": "onChronicTransfusion",
               "questionOptions": {
                 "rendering": "radio",
-                "concept": "1871AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "answers": [
                   {
                     "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -328,7 +318,7 @@
               "id": "chronicTransfusionStopDate",
               "questionOptions": {
                 "rendering": "date",
-                "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "validators": [
                 {
@@ -353,7 +343,7 @@
               "id": "onPhysiotherapy",
               "questionOptions": {
                 "rendering": "radio",
-                "concept": "1871AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "answers": [
                   {
                     "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -392,7 +382,7 @@
               "id": "physiotherapyStopDate",
               "questionOptions": {
                 "rendering": "date",
-                "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               },
               "validators": [
                 {
@@ -420,7 +410,7 @@
               "type": "obsGroup",
               "id": "diagScdNonHu",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "group"
               },
               "questions": [
@@ -462,7 +452,7 @@
               "type": "obsGroup",
               "id": "diagConditionalTcd",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "group"
               },
               "questions": [
@@ -504,7 +494,7 @@
               "type": "obsGroup",
               "id": "diagAbnormalTcd",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "group"
               },
               "questions": [
@@ -546,7 +536,7 @@
               "type": "obsGroup",
               "id": "diagStroke",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "group"
               },
               "questions": [
@@ -588,7 +578,7 @@
               "type": "obsGroup",
               "id": "diagSplenomegaly",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "group"
               },
               "questions": [
@@ -630,7 +620,7 @@
               "type": "obsGroup",
               "id": "diagChronicSequestration",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "group"
               },
               "questions": [
@@ -672,7 +662,7 @@
               "type": "obsGroup",
               "id": "diagOsteonecrosis",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "group"
               },
               "questions": [
@@ -714,7 +704,7 @@
               "type": "obsGroup",
               "id": "diagOther",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "group"
               },
               "questions": [
@@ -779,7 +769,7 @@
               "type": "obsGroup",
               "id": "siblingGroup",
               "questionOptions": {
-                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "152476AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "rendering": "repeating"
               },
               "questions": [
@@ -789,7 +779,7 @@
                   "id": "siblingName",
                   "questionOptions": {
                     "rendering": "text",
-                    "concept": "162087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                   }
                 },
                 {
@@ -798,7 +788,7 @@
                   "id": "siblingYearOfBirth",
                   "questionOptions": {
                     "rendering": "number",
-                    "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "1418AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                   }
                 },
                 {
@@ -807,7 +797,7 @@
                   "id": "siblingTested",
                   "questionOptions": {
                     "rendering": "radio",
-                    "concept": "160225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "answers": [
                       {
                         "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -849,7 +839,7 @@
                   "id": "siblingSsuuboNo",
                   "questionOptions": {
                     "rendering": "text",
-                    "concept": "162087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "1420AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                   }
                 }
               ]
