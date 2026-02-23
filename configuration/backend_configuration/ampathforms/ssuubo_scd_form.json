@@ -1,0 +1,864 @@
+{
+  "name": "SSUUBO Sickle Cell Disease Form",
+  "description": "Comprehensive Sickle Cell Disease patient intake and management form",
+  "version": "1.0",
+  "published": true,
+  "uuid": "8d8f7e6d-5c4b-4a3d-9e8f-1a2b3c4d5e6f",
+  "retired": false,
+  "encounter": "Consultation",
+  "pages": [
+    {
+      "label": "Patient Demographics",
+      "sections": [
+        {
+          "label": "Personal Information",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "Patient Name",
+              "type": "obs",
+              "required": true,
+              "id": "patientName",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "1586AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              }
+            },
+            {
+              "label": "Date of Birth",
+              "type": "obs",
+              "required": true,
+              "id": "dateOfBirth",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "164400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            },
+            {
+              "label": "Is the patient deceased?",
+              "type": "obs",
+              "required": false,
+              "id": "isDeceased",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "1570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Date of Death",
+              "type": "obs",
+              "required": false,
+              "id": "deathDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "1543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "isDeceased !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Reason for Death",
+              "type": "obs",
+              "required": false,
+              "id": "reasonForDeath",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "1599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "hide": {
+                "hideWhenExpression": "isDeceased !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Address",
+              "type": "obs",
+              "required": false,
+              "id": "address",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "167133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Contact & Other Info",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "Contact Numbers",
+              "type": "obsGroup",
+              "id": "contactNumbersGroup",
+              "questionOptions": {
+                "concept": "160636AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "repeating"
+              },
+              "questions": [
+                {
+                  "label": "Phone Number",
+                  "type": "obs",
+                  "id": "phoneNumber",
+                  "questionOptions": {
+                    "rendering": "text",
+                    "concept": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Comments",
+              "type": "obs",
+              "required": false,
+              "id": "comments",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              }
+            },
+            {
+              "label": "Patient Photograph",
+              "type": "obs",
+              "required": false,
+              "id": "patientPhoto",
+              "questionOptions": {
+                "rendering": "file",
+                "concept": "167040AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "SCD Clinical Information",
+      "sections": [
+        {
+          "label": "Diagnosis & Enrollment Dates",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "Date of SCD Diagnosis",
+              "type": "obs",
+              "required": true,
+              "id": "scdDiagnosisDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            },
+            {
+              "label": "Date of SSUUBO Care Enrollment",
+              "type": "obs",
+              "required": true,
+              "id": "ssuuboEnrollmentDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            },
+            {
+              "label": "PCV Vaccination Date",
+              "type": "obs",
+              "required": false,
+              "id": "pcvVaccinationDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "164134AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Treatments",
+      "sections": [
+        {
+          "label": "Hydroxyurea Treatment",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "On Hydroxyurea Treatment?",
+              "type": "obs",
+              "required": false,
+              "id": "onHydroxyurea",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "159367AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Hydroxyurea Start Date",
+              "type": "obs",
+              "required": false,
+              "id": "hydroxyureaStartDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "onHydroxyurea !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Hydroxyurea Stop Date",
+              "type": "obs",
+              "required": false,
+              "id": "hydroxyureaStopDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "159600AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "onHydroxyurea !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Chronic Transfusion Programme",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "On Chronic Transfusion Programme?",
+              "type": "obs",
+              "required": false,
+              "id": "onChronicTransfusion",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "165174AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Chronic Transfusion Start Date",
+              "type": "obs",
+              "required": false,
+              "id": "chronicTransfusionStartDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "onChronicTransfusion !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Chronic Transfusion Stop Date",
+              "type": "obs",
+              "required": false,
+              "id": "chronicTransfusionStopDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "159600AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "onChronicTransfusion !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Physiotherapy",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "On Physiotherapy?",
+              "type": "obs",
+              "required": false,
+              "id": "onPhysiotherapy",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "165220AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Physiotherapy Start Date",
+              "type": "obs",
+              "required": false,
+              "id": "physiotherapyStartDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "onPhysiotherapy !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Physiotherapy Stop Date",
+              "type": "obs",
+              "required": false,
+              "id": "physiotherapyStopDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "159600AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "onPhysiotherapy !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Primary Diagnoses",
+      "sections": [
+        {
+          "label": "List of Primary Diagnoses",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "SCD non-HU",
+              "type": "obsGroup",
+              "id": "diagScdNonHu",
+              "questionOptions": {
+                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "group"
+              },
+              "questions": [
+                {
+                  "label": "Diagnosed?",
+                  "type": "obs",
+                  "id": "scdNonHuDiagnosed",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Date Diagnosed",
+                  "type": "obs",
+                  "id": "scdNonHuDate",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "scdNonHuDiagnosed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Conditional TCD",
+              "type": "obsGroup",
+              "id": "diagConditionalTcd",
+              "questionOptions": {
+                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "group"
+              },
+              "questions": [
+                {
+                  "label": "Diagnosed?",
+                  "type": "obs",
+                  "id": "conditionalTcdDiagnosed",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Date Diagnosed",
+                  "type": "obs",
+                  "id": "conditionalTcdDate",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "conditionalTcdDiagnosed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Abnormal TCD",
+              "type": "obsGroup",
+              "id": "diagAbnormalTcd",
+              "questionOptions": {
+                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "group"
+              },
+              "questions": [
+                {
+                  "label": "Diagnosed?",
+                  "type": "obs",
+                  "id": "abnormalTcdDiagnosed",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Date Diagnosed",
+                  "type": "obs",
+                  "id": "abnormalTcdDate",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "abnormalTcdDiagnosed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Stroke",
+              "type": "obsGroup",
+              "id": "diagStroke",
+              "questionOptions": {
+                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "group"
+              },
+              "questions": [
+                {
+                  "label": "Diagnosed?",
+                  "type": "obs",
+                  "id": "strokeDiagnosed",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Date Diagnosed",
+                  "type": "obs",
+                  "id": "strokeDate",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "strokeDiagnosed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Splenomegaly",
+              "type": "obsGroup",
+              "id": "diagSplenomegaly",
+              "questionOptions": {
+                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "group"
+              },
+              "questions": [
+                {
+                  "label": "Diagnosed?",
+                  "type": "obs",
+                  "id": "splenomegalyDiagnosed",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Date Diagnosed",
+                  "type": "obs",
+                  "id": "splenomegalyDate",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "splenomegalyDiagnosed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Chronic Sequestration",
+              "type": "obsGroup",
+              "id": "diagChronicSequestration",
+              "questionOptions": {
+                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "group"
+              },
+              "questions": [
+                {
+                  "label": "Diagnosed?",
+                  "type": "obs",
+                  "id": "chronicSequestrationDiagnosed",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Date Diagnosed",
+                  "type": "obs",
+                  "id": "chronicSequestrationDate",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "chronicSequestrationDiagnosed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Osteonecrosis",
+              "type": "obsGroup",
+              "id": "diagOsteonecrosis",
+              "questionOptions": {
+                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "group"
+              },
+              "questions": [
+                {
+                  "label": "Diagnosed?",
+                  "type": "obs",
+                  "id": "osteonecrosisDiagnosed",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Date Diagnosed",
+                  "type": "obs",
+                  "id": "osteonecrosisDate",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "osteonecrosisDiagnosed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Other Complication",
+              "type": "obsGroup",
+              "id": "diagOther",
+              "questionOptions": {
+                "concept": "159947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "group"
+              },
+              "questions": [
+                {
+                  "label": "Diagnosed?",
+                  "type": "obs",
+                  "id": "otherDiagnosed",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "159394AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Date Diagnosed",
+                  "type": "obs",
+                  "id": "otherDate",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "otherDiagnosed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                },
+                {
+                  "label": "Specify Other Complication",
+                  "type": "obs",
+                  "id": "otherComplicationDesc",
+                  "questionOptions": {
+                    "rendering": "textarea",
+                    "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  "hide": {
+                    "hideWhenExpression": "otherDiagnosed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Siblings",
+      "sections": [
+        {
+          "label": "Sibling Information",
+          "isExpanded": true,
+          "questions": [
+            {
+              "label": "Sibling Details",
+              "type": "obsGroup",
+              "id": "siblingGroup",
+              "questionOptions": {
+                "concept": "160593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "repeating"
+              },
+              "questions": [
+                {
+                  "label": "Sibling Name",
+                  "type": "obs",
+                  "id": "siblingName",
+                  "questionOptions": {
+                    "rendering": "text",
+                    "concept": "1586AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                },
+                {
+                  "label": "Year of Birth",
+                  "type": "obs",
+                  "id": "siblingYearOfBirth",
+                  "questionOptions": {
+                    "rendering": "number",
+                    "concept": "164400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                },
+                {
+                  "label": "Tested for SCD?",
+                  "type": "obs",
+                  "id": "siblingTested",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "164401AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Test Result",
+                  "type": "obs",
+                  "id": "siblingTestResult",
+                  "questionOptions": {
+                    "rendering": "select",
+                    "concept": "159427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "N/A"
+                      },
+                      {
+                        "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Negative"
+                      },
+                      {
+                        "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Positive"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "SSUUBO Number",
+                  "type": "obs",
+                  "id": "siblingSsuuboNo",
+                  "questionOptions": {
+                    "rendering": "text",
+                    "concept": "162576AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "processor": "EncounterFormProcessor",
+  "referencedForms": []
+}
