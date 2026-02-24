@@ -1,7 +1,7 @@
 {
   "name": "SSUUBO Sickle Cell Disease Form",
   "description": "Comprehensive Sickle Cell Disease patient intake and management form",
-  "version": "1.2",
+  "version": "1.3",
   "published": true,
   "uuid": "3f2a1b4c-7d8e-4f9a-b2c3-d4e5f6a7b8c9",
   "retired": false,
@@ -15,30 +15,13 @@
           "isExpanded": true,
           "questions": [
             {
-              "label": "Patient Name",
-              "type": "obs",
-              "required": true,
-              "id": "patientName",
+              "label": "",
+              "type": "control",
+              "id": "patientNameLabel",
               "questionOptions": {
-                "rendering": "text",
-                "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-              }
-            },
-            {
-              "label": "Date of Birth",
-              "type": "obs",
-              "required": true,
-              "id": "dateOfBirth",
-              "questionOptions": {
-                "rendering": "date",
-                "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "rendering": "markdown"
               },
-              "validators": [
-                {
-                  "type": "date",
-                  "allowFutureDates": "false"
-                }
-              ]
+              "value": ["**Patient Name** and **Date of Birth** are displayed in the patient banner above. They are pulled directly from the patient record and cannot be edited here."]
             },
             {
               "label": "Is the patient deceased?",
@@ -91,14 +74,20 @@
               "hide": {
                 "hideWhenExpression": "isDeceased !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
-            },
+            }
+          ]
+        },
+        {
+          "label": "Address",
+          "isExpanded": true,
+          "questions": [
             {
-              "label": "Address",
+              "label": "Address (search by village, parish, sub-county, or district)",
               "type": "obs",
               "required": false,
               "id": "address",
               "questionOptions": {
-                "rendering": "textarea",
+                "rendering": "text",
                 "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
               }
             }
