@@ -404,7 +404,7 @@
               },
               "questions": [
                 {
-                  "label": "Diagnosed?",
+                  "label": "SCD non-HU - Diagnosed?",
                   "type": "obs",
                   "id": "scdNonHuDiagnosed",
                   "questionOptions": {
@@ -423,7 +423,7 @@
                   }
                 },
                 {
-                  "label": "Date Diagnosed",
+                  "label": "SCD non-HU - Date Diagnosed",
                   "type": "obs",
                   "id": "scdNonHuDate",
                   "questionOptions": {
@@ -446,7 +446,7 @@
               },
               "questions": [
                 {
-                  "label": "Diagnosed?",
+                  "label": "Conditional TCD - Diagnosed?",
                   "type": "obs",
                   "id": "conditionalTcdDiagnosed",
                   "questionOptions": {
@@ -465,7 +465,7 @@
                   }
                 },
                 {
-                  "label": "Date Diagnosed",
+                  "label": "Conditional TCD - Date Diagnosed",
                   "type": "obs",
                   "id": "conditionalTcdDate",
                   "questionOptions": {
@@ -488,7 +488,7 @@
               },
               "questions": [
                 {
-                  "label": "Diagnosed?",
+                  "label": "Abnormal TCD - Diagnosed?",
                   "type": "obs",
                   "id": "abnormalTcdDiagnosed",
                   "questionOptions": {
@@ -507,7 +507,7 @@
                   }
                 },
                 {
-                  "label": "Date Diagnosed",
+                  "label": "Abnormal TCD - Date Diagnosed",
                   "type": "obs",
                   "id": "abnormalTcdDate",
                   "questionOptions": {
@@ -530,7 +530,7 @@
               },
               "questions": [
                 {
-                  "label": "Diagnosed?",
+                  "label": "Stroke - Diagnosed?",
                   "type": "obs",
                   "id": "strokeDiagnosed",
                   "questionOptions": {
@@ -549,7 +549,7 @@
                   }
                 },
                 {
-                  "label": "Date Diagnosed",
+                  "label": "Stroke - Date Diagnosed",
                   "type": "obs",
                   "id": "strokeDate",
                   "questionOptions": {
@@ -572,7 +572,7 @@
               },
               "questions": [
                 {
-                  "label": "Diagnosed?",
+                  "label": "Splenomegaly - Diagnosed?",
                   "type": "obs",
                   "id": "splenomegalyDiagnosed",
                   "questionOptions": {
@@ -591,7 +591,7 @@
                   }
                 },
                 {
-                  "label": "Date Diagnosed",
+                  "label": "Splenomegaly - Date Diagnosed",
                   "type": "obs",
                   "id": "splenomegalyDate",
                   "questionOptions": {
@@ -614,7 +614,7 @@
               },
               "questions": [
                 {
-                  "label": "Diagnosed?",
+                  "label": "Chronic Sequestration - Diagnosed?",
                   "type": "obs",
                   "id": "chronicSequestrationDiagnosed",
                   "questionOptions": {
@@ -633,7 +633,7 @@
                   }
                 },
                 {
-                  "label": "Date Diagnosed",
+                  "label": "Chronic Sequestration - Date Diagnosed",
                   "type": "obs",
                   "id": "chronicSequestrationDate",
                   "questionOptions": {
@@ -656,7 +656,7 @@
               },
               "questions": [
                 {
-                  "label": "Diagnosed?",
+                  "label": "Osteonecrosis - Diagnosed?",
                   "type": "obs",
                   "id": "osteonecrosisDiagnosed",
                   "questionOptions": {
@@ -675,7 +675,7 @@
                   }
                 },
                 {
-                  "label": "Date Diagnosed",
+                  "label": "Osteonecrosis - Date Diagnosed",
                   "type": "obs",
                   "id": "osteonecrosisDate",
                   "questionOptions": {
@@ -698,7 +698,7 @@
               },
               "questions": [
                 {
-                  "label": "Diagnosed?",
+                  "label": "Other Complication - Diagnosed?",
                   "type": "obs",
                   "id": "otherDiagnosed",
                   "questionOptions": {
@@ -717,7 +717,7 @@
                   }
                 },
                 {
-                  "label": "Date Diagnosed",
+                  "label": "Other Complication - Date Diagnosed",
                   "type": "obs",
                   "id": "otherDate",
                   "questionOptions": {
