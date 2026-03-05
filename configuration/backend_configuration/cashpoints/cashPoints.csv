@@ -1,4 +1,8 @@
 uuid,Void/Retire,name,description,location
-54065383-b4d4-42d2-af4d-d250a1fd2590,, OPD Cash Point, Opd cash point for billing, Opd Clinic
-ba685651-ed3b-4e63-9b35-78893060758a,, IPD Cash Point, IPD cash point for billing, Inpatient Ward
-1ce1b7d4-c865-4178-82b0-5932e51503d6,, Community Outreach, MCH cash point for billing, Community Outreach
+54065383-b4d4-42d2-af4d-d250a1fd2590,, OPD Cash Point, Outpatient cash point for billing, Outpatient Clinic
+ba685651-ed3b-4e63-9b35-78893060758a,, IPD Cash Point, Inpatient cash point for billing, Inpatient Ward
+1ce1b7d4-c865-4178-82b0-5932e51503d6,, Mobile Clinic Cash Point, Mobile clinic cash point for billing, Mobile Clinic
+5d6e7f8a-9b0c-1d2e-3f4a-5b6c7d8e9f0a,, Pharmacy Cash Point, Pharmacy cash point for billing, Pharmacy
+6e7f8a9b-0c1d-2e3f-4a5b-6c7d8e9f0a1b,, Emergency Cash Point, Emergency room cash point for billing, Emergency Room
+7f8a9b0c-1d2e-3f4a-5b6c-7d8e9f0a1b2c,, Registration Cash Point, Registration cash point for billing, Registration
+8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d,, Laboratory Cash Point, Laboratory cash point for billing, Laboratory

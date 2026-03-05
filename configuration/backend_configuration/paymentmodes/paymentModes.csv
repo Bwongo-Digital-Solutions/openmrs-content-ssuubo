@@ -1,4 +1,8 @@
 uuid, Void/Retire, name, attributes
 526bf278-ba81-4436-b867-c2f6641d060a,, Cash,
-2b1b9aae-5d35-43dd-9214-3fd370fd7737,, Bank transfer,
-e168c141-f5fd-4eec-bd3e-633bed1c9606,, Paypal, Maximum::Numeric::::True;Minimum
+2b1b9aae-5d35-43dd-9214-3fd370fd7737,, Bank Transfer,
+3c2d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f,, Mobile Money - MTN,
+4d3e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a,, Mobile Money - Airtel,
+5e4f6a7b-8c9d-0e1f-2a3b-4c5d6e7f8a9b,, Debit/Credit Card,
+6f5a7b8c-9d0e-1f2a-3b4c-5d6e7f8a9b0c,, Insurance,
+e168c141-f5fd-4eec-bd3e-633bed1c9606,, Cheque,
