@@ -33,7 +33,6 @@
 	</properties>
 	<build>
 		<plugins>
-		<!-- Disabled due to Maven Central API connectivity issues
 		<plugin>
       <groupId>org.sonatype.central</groupId>
       <artifactId>central-publishing-maven-plugin</artifactId>
@@ -43,7 +42,6 @@
         <autoPublish>true</autoPublish>
       </configuration>
     </plugin>
-    -->
 			<plugin>
 				<groupId>org.openmrs.maven.plugins</groupId>
 				<artifactId>openmrs-packager-maven-plugin</artifactId>
